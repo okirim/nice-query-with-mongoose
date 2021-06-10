@@ -1,5 +1,5 @@
 {
-  "name": "node",
+  "name": "nice-query-with-mongoose",
   "version": "1.0.0",
   "description": "make nice query with mongoose",
   "main": "index.js",
