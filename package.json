@@ -1,0 +1,21 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "concurrently": "^6.2.0",
+    "mongoose": "^5.12.13",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.2"
+  }
+}
