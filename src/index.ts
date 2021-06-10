@@ -3,7 +3,7 @@ import { Query, Document, } from 'mongoose';
 
 type RequestQuery = { [key: string]: string|string[] }
 
-export class FilterRequest<T extends Document<any, any>>{
+ class FilterRequest<T extends Document<any, any>>{
 
     private excludedFields: string[] = ['page', 'sort', 'select'];
 
@@ -66,3 +66,4 @@ export class FilterRequest<T extends Document<any, any>>{
 
     }
 }
+export default FilterRequest;

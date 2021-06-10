@@ -1,8 +1,9 @@
 {
-  "name": "nice-query-with-mongoose",
+  "name": "nice-query",
   "version": "1.0.0",
   "description": "make nice query with mongoose",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
