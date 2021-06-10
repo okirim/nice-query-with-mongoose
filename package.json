@@ -14,15 +14,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/mongoose": "^5.11.97",
-    "mongoose": "^5.12.13"
+    "@types/mongoose": "^5.11.97"
   },
   "devDependencies": {
     "typescript": "^4.3.2"
   },
-   "repository": {
-     "type": "git",
-     "url": "git+https://github.com/okirim/nice-query-with-mongoose"
-   },
-  "files": ["lib/**/*"]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okirim/nice-query-with-mongoose"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }

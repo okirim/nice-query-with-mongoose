@@ -1,6 +1,6 @@
 #### install
 ```
-npm  i --save nice-query-with-mongoose
+npm i nice-query
 ```
 #### query 
 `'/api/products?select=name,price,qte&page=2&limit=10&sort=-price&qte[gt]=1'`
