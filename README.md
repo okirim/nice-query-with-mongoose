@@ -2,8 +2,28 @@
 ```
 npm i nice-query
 ```
-#### query 
-`'/api/products?select=name,price,qte&page=2&limit=10&sort=-price&qte[gt]=1'`
+#### Handle query 
+`'/api/products?select=name,price,qte&page=2&sort=-price&quantity[gt]=0'`
+```
+select fields : select=field1,field2 
+ex: select=name,price
+
+```
+```
+page : page=pageNumber
+ex: page=2
+
+```
+```
+sort by : sort=(+ or -)fieldName
+ex: sort=+price (asc)
+ex2 : sort=-price (desc)
+
+```
+where : fliedName[gt,lt,gte,lte]=val 
+quantity[gt]=0
+
+```
 
 `example : with express`
 ```
@@ -36,4 +56,18 @@ const filterProducts = new FilterRequest(
       const products = await productsFiltered.collection;
       ...
 }
+```
+example 3 : with typescript
+```
+const filterProducts = new FilterRequest<ProductsDocument>(
+        { ...req.query },
+        Product.find({})
+      );
+        filterProducts
+        .filter()
+        .sort()
+        .select()
+        .paginate(10);
+      const products = await productsFiltered.collection;
+      
 ```
