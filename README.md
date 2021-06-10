@@ -4,7 +4,7 @@ npm i nice-query
 ```
 ### Handle query 
 ```
-example:  
+example uri :  
 '/api/products?select=name,price,qte&page=2&sort=-price&quantity[gt]=0'
 ```
 
@@ -31,48 +31,52 @@ quantity[gt]=0
 ```
 
 #### example 1 : with express
-```
+``` 
+import FilterRequest from 'nice-query';
+
 const getProducts= (req,res,next)=>{
-const filterProducts = new FilterRequest(
-        { ...req.query },
-        Product.find({})
-      );
-        filterProducts
-        .filter()
-        .sort()
-        .select()
-        .paginate(10);
-      const products = await productsFiltered.collection;
+
+const filterProducts = new FilterRequest({ ...req.query },Product.find({}))
+                          .filter()
+                          .sort()
+                          .select()
+                          .paginate(10);
+
+const products = await filterProducts.collection;
       ...
 }
 ```
 #### example 2 : with nextjs
 ```
+import FilterRequest from 'nice-query';
+
 export default (req,res)=>{
-const filterProducts = new FilterRequest(
-        { ...req.query },
-        Product.find({})
-      );
-        filterProducts
-        .filter()
-        .sort()
-        .select()
-        .paginate(10);
-      const products = await productsFiltered.collection;
+const filterProducts = new FilterRequest({ ...req.query },Product.find({}))
+                          .filter()
+                          .sort()
+                          .select()
+                          .paginate(10);
+       
+const products = await filterProducts.collection;
       ...
 }
 ```
+
 #### example 3 : with typescript
+
 ```
+...
 const filterProducts = new FilterRequest<ProductsDocument>(
+
         { ...req.query },
         Product.find({})
-      );
-        filterProducts
-        .filter()
+       ).filter()
         .sort()
         .select()
         .paginate(10);
-      const products = await productsFiltered.collection;
+
+
+ const products = await filterProducts.collection;
+...      
       
 ```
