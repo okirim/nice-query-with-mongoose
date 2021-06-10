@@ -1,21 +1,27 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "description": "",
+  "description": "make nice query with mongoose",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/mongoose": "^5.11.97",
-    "concurrently": "^6.2.0",
-    "mongoose": "^5.12.13",
-    "nodemon": "^2.0.7"
+    "mongoose": "^5.12.13"
   },
   "devDependencies": {
     "typescript": "^4.3.2"
-  }
+  },
+   "repository": {
+     "type": "git",
+     "url": "git+https://github.com/okirim/nice-query-with-mongoose"
+   },
+  "files": ["lib/**/*"]
 }

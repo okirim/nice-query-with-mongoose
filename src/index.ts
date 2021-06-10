@@ -65,24 +65,4 @@ export class FilterRequest<T extends Document<any, any>>{
         return this;
 
     }
-
-
-
 }
-
-
-
-//how to use it 
-//example '/api/products?select=name,price,qte&page=2&limit=10&sort=-price'
-
-/**
- *  const productsFiltered = new FilterRequest(
-        { ...req.query },
-        Comment.find()
-      )
-        .filter()
-        .sort()
-        .select()
-        .paginate(10);
-      const tours = await productsFiltered.query;
- */
