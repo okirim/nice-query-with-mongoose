@@ -1,6 +1,6 @@
 {
   "name": "nice-query",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "make nice query with mongoose",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

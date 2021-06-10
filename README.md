@@ -1,9 +1,13 @@
-#### install
+### install
 ```
 npm i nice-query
 ```
-#### Handle query 
-`'/api/products?select=name,price,qte&page=2&sort=-price&quantity[gt]=0'`
+### Handle query 
+```
+example:  
+'/api/products?select=name,price,qte&page=2&sort=-price&quantity[gt]=0'
+```
+
 ```
 select fields : select=field1,field2 
 ex: select=name,price
@@ -20,12 +24,13 @@ ex: sort=+price (asc)
 ex2 : sort=-price (desc)
 
 ```
-where : fliedName[gt,lt,gte,lte]=val 
+```
+select where : fliedName[gt,lt,gte,lte]=value 
 quantity[gt]=0
 
 ```
 
-`example : with express`
+#### example 1 : with express
 ```
 const getProducts= (req,res,next)=>{
 const filterProducts = new FilterRequest(
@@ -41,7 +46,7 @@ const filterProducts = new FilterRequest(
       ...
 }
 ```
-`example 2 : with nextjs`
+#### example 2 : with nextjs
 ```
 export default (req,res)=>{
 const filterProducts = new FilterRequest(
@@ -57,7 +62,7 @@ const filterProducts = new FilterRequest(
       ...
 }
 ```
-example 3 : with typescript
+#### example 3 : with typescript
 ```
 const filterProducts = new FilterRequest<ProductsDocument>(
         { ...req.query },
